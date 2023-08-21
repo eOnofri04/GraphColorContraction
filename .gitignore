@@ -1,0 +1,14 @@
+*.DS_Store
+
+.vscode
+
+app
+bin
+config
+data/generated
+logs
+results
+
+*dSYM
+
+gmon.out
