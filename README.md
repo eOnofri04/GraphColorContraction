@@ -44,7 +44,7 @@ To know how to use a target and which optional parameters are available, simply 
 To remove the compiled sources use `make clean` and to remove the contraction outputs use `make data-cleanup`.
 Do note that generated graphs with `genErdosRenyi` target will not be removed this way.
 
-Compilation for debug can be enabled changing the `DEBUG` flag in the `Makefile`.
+Compilation for debug (`-g -O0 -Wall`) and for profiling (`-pg -O2`) can be enabled by calling `make DEBUG=true <target>` or `make PROFILE=true <target>`.
 
 ## Authors and acknowledgment
 

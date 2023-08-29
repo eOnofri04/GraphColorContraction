@@ -1,5 +1,6 @@
 uname_S := $(shell uname -s)
 DEBUG = false
+PROFILE = false
 
 ifeq ($(uname_S), Darwin)
 	CC = gcc-10
@@ -13,18 +14,26 @@ OBJECTS_DIR = bin/
 EXECUTABLES_DIR = app/
 
 
-CFLAGSDEB = -g -Wall -Og -lm -fopenmp -pg
-LFLAGSDEB = -g -Wall -Og -lm -c -fopenmp -pg
+CFLAGSDEB  = -g -Wall -Og -lm
+LFLAGSDEB  = -g -Wall -Og -lm -c
 
-CFLAGSPROD = -march=native -O3 -lm -fopenmp
-LFLAGSPROD = -march=native -O3 -lm -c -fopenmp
+CFLAGSPROF = -march=native -O2 -lm -pg
+LFLAGSPROF = -march=native -O2 -lm -c -pg
+
+CFLAGSPROD = -march=native -O3 -lm
+LFLAGSPROD = -march=native -O3 -lm -c
 
 ifeq ($(DEBUG), true)
 	CFLAGS = $(CFLAGSDEB)
 	LFLAGS = $(LFLAGSDEB)
 else
-	CFLAGS = $(CFLAGSPROD)
-	LFLAGS = $(LFLAGSPROD)
+	ifeq ($(PROFILE), true)
+		CFLAGS = $(CFLAGSPROF)
+		LFLAGS = $(LFLAGSPROF)
+	else
+		CFLAGS = $(CFLAGSPROD)
+		LFLAGS = $(LFLAGSPROD)
+	endif
 endif
 
 DEPS = \
@@ -106,6 +115,7 @@ help:                                                                    ## Show
 	@echo 'Variable list:'
 	@echo ' - Compiler:          $(CC)'
 	@echo ' - Debug:             $(DEBUG)'
+	@echo ' - Profile:           $(PROFILE)'
 	@echo ' - Application Flags: $(CFLAGS)'
 	@echo ' - Library Flags:     $(LFLAGS)'
 	@echo ' - Library Files:     $(DEPS)'
