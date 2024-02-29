@@ -50,7 +50,7 @@ Compilation for debug (`-g -O0 -Wall`) and for profiling (`-pg -O2`) can be enab
 
 [ORCID:0000-0001-8391-2563](https://orcid.org/0000-0001-8391-2563)\
 [Elia Onofri](https://sites.google.com/view/elia-onofri/home)
-obtained the bachelor's degree in Mathematics in 2018 and the master's degree in Computational Sciences in 2020 at Roma Tre University, Rome, Italy. Currently, he is a Ph.D. student in Mathematics at Roma Tre University, under a collaboration with the National Research Council of Italy where he do has a research fellowship.
+obtained the bachelor's degree in Mathematics in 2018, the master's degree in Computational Sciences in 2020, and the Ph.D. in Mathematics in 2023 at Roma Tre University, Rome, Italy. Currently, he is has a research grant with the Institute for Applied Mathematics M. Picone of the National Research Council of Italy (IAC-CNR) where he is employed as Research Fellow.
 His research fields concern applied mathematics in cryptography, graph theory, machine learning, biology and forecasting simulations.
 
 [ORCID:0000-0003-0723-7847](https://orcid.org/0000-0003-0723-7847)\
@@ -59,6 +59,16 @@ His research fields concern applied mathematics in cryptography, graph theory, m
 ## How to cite
 
 ```bib
+@misc{Onofri23,
+	author = {Onofri, Elia},
+	howpublished = {\url{https://github.com/eOnofri04/GraphColorContraction}},
+	journal = {GitHub repository},
+	note = {v.1.0},
+	publisher = {GitHub},
+	title = {beta-Contraction: a C library},
+	year = {2013}
+}
+
 @article{LombardiOnofri22a,
 	author = {Lombardi, Flavio and Onofri, Elia},
 	doi = {10.1016/j.procs.2022.03.056},
